@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML5 Input Attributes & Restrictions</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f4f4f4;
+        }
+        .container {
+            width: 80%;
+            max-width: 600px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2 {
+            text-align: center;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+        label {
+            font-weight: bold;
+            margin-top: 10px;
+        }
+        input, select, button {
+            padding: 8px;
+            margin-top: 5px;
+            font-size: 16px;
+        }
+        button {
+            background: green;
+            color: white;
+            border: none;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        button:hover {
+            background: darkgreen;
+        }
+        iframe {
+            width: 100%;
+            height: 300px;
+            margin-top: 20px;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>HTML5 Input Attributes & Restrictions</h1>
+
+        <!-- 1. Basic Input Types -->
+        <form action="#" method="POST">
+            <label>Text:</label>
+            <input type="text" placeholder="Enter your name">
+
+            <label>Password:</label>
+            <input type="password" placeholder="Enter password">
+
+            <label>Radio Buttons:</label>
+            <input type="radio" name="gender" value="Male"> Male
+            <input type="radio" name="gender" value="Female"> Female
+
+            <label>Checkbox:</label>
+            <input type="checkbox" name="subscribe"> Subscribe to newsletter
+
+            <label>Button:</label>
+            <button type="button" onclick="alert('Button Clicked!')">Click Me</button>
+
+            <label>Submit & Reset Buttons:</label>
+            <input type="submit" value="Submit">
+            <input type="reset" value="Reset">
+        </form>
+
+        <h2>HTML5 Input Types</h2>
+        <!-- 2. HTML5 Input Types -->
+        <form>
+            <label>Number:</label>
+            <input type="number" min="1" max="100">
+
+            <label>Range:</label>
+            <input type="range" min="0" max="50">
+
+            <label>Color Picker:</label>
+            <input type="color">
+
+            <label>Date:</label>
+            <input type="date">
+
+            <label>File Upload:</label>
+            <input type="file">
+
+            <label>Time:</label>
+            <input type="time">
+
+            <label>Month:</label>
+            <input type="month">
+
+            <label>Week:</label>
+            <input type="week">
+
+            <label>Email:</label>
+            <input type="email" required>
+        </form>
+
+        <h2>Input Restrictions</h2>
+        <!-- 3. Input Restrictions -->
+        <form>
+            <label>Disabled Field:</label>
+            <input type="text" value="Can't Edit" disabled>
+
+            <label>Max & Min (Age 18-60):</label>
+            <input type="number" min="18" max="60">
+
+            <label>Max Length (5 chars):</label>
+            <input type="text" maxlength="5">
+
+            <label>Readonly Field:</label>
+            <input type="text" value="Read Only" readonly>
+
+            <label>Required Field:</label>
+            <input type="text" required>
+
+            <label>Size Attribute:</label>
+            <input type="text" size="10">
+        </form>
+
+        <h2>Target Attribute Example</h2>
+        <!-- 4. Target Attribute -->
+        <a href="https://www.google.com" target="_blank">Open Google in New Tab (_blank)</a><br>
+        <a href="https://www.google.com" target="_self">Open Google in Same Tab (_self)</a>
+
+        <h2>I-Frame Example</h2>
+        <!-- 5. I-frame Example -->
+        <iframe src="https://www.wikipedia.org"></iframe>
+
+        <h2>Marquee Example</h2>
+        <!-- 6. Marquee Example -->
+        <marquee behavior="scroll" direction="left">Welcome to HTML5 Input Attributes Page!</marquee>
+    </div>
+
+</body>
+</html>

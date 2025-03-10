@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Access and Properties</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f4f4f4;
+        }
+        .container {
+            width: 80%;
+            max-width: 600px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        button {
+            padding: 10px;
+            margin: 10px;
+            font-size: 16px;
+            background: green;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background: darkgreen;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>JavaScript Access and Properties</h1>
+
+        <!-- 1. Button Disappearing Using 'this' -->
+        <h2>Click to Disappear</h2>
+        <button onclick="this.style.display='none'">Click Me</button>
+
+        <!-- 2. Call() and Apply() Example -->
+        <h2>Using call() and apply()</h2>
+        <p id="callApplyResult"></p>
+        <button onclick="useCallApply()">Invoke call() and apply()</button>
+
+        <!-- 3. Counter with Button Click -->
+        <h2>Simple Counter</h2>
+        <p>Counter: <span id="counter">0</span></p>
+        <button onclick="incrementCounter()">Count</button>
+
+        <!-- 4. Counter Using Getter and Setter -->
+        <h2>Counter with Getter and Setter</h2>
+        <p>Advanced Counter: <span id="advancedCounter">0</span></p>
+        <button onclick="incrementAdvancedCounter()">Count</button>
+
+        <!-- 5. Adding Properties to Function Using Prototypes -->
+        <h2>Object Prototypes</h2>
+        <p id="prototypeOutput"></p>
+        <button onclick="showPrototype()">Show Prototype Properties</button>
+    </div>
+
+    <script>
+        // 2. Using call() and apply()
+        function greet(message) {
+            return message + " " + this.name;
+        }
+
+        let person = { name: "Surya Sai" };
+
+        function useCallApply() {
+            let callResult = greet.call(person, "Hello using call()");
+            let applyResult = greet.apply(person, ["Hello using apply()"]);
+            document.getElementById("callApplyResult").innerHTML = callResult + "<br>" + applyResult;
+        }
+
+        // 3. Counter Increment
+        let count = 0;
+        function incrementCounter() {
+            count++;
+            document.getElementById("counter").innerText = count;
+        }
+
+        // 4. Counter Using Getter and Setter
+        let counterObj = {
+            _count: 0,
+            get count() {
+                return this._count;
+            },
+            set count(value) {
+                this._count = value;
+                document.getElementById("advancedCounter").innerText = this._count;
+            }
+        };
+
+        function incrementAdvancedCounter() {
+            counterObj.count = counterObj.count + 1;
+        }
+
+        // 5. Adding Properties Using Object Prototypes
+        function Car(brand, model) {
+            this.brand = brand;
+            this.model = model;
+        }
+
+        Car.prototype.year = 2024;
+        Car.prototype.getDetails = function() {
+            return this.brand + " " + this.model + " - " + this.year;
+        };
+
+        function showPrototype() {
+            let myCar = new Car("Tesla", "Model X");
+            document.getElementById("prototypeOutput").innerText = myCar.getDetails();
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Page Adjustments</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+            padding: 0;
+            background-color: #f8f8f8;
+        }
+        h1, h2 {
+            color: #333;
+        }
+        .container {
+            width: 90%;
+            max-width: 800px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        /* 1. Table with Border and Hover Effect */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        th, td {
+            border: 2px solid black;
+            padding: 10px;
+            text-align: center;
+        }
+        table:hover {
+            background-color: #f0f0f0;
+        }
+
+        /* 2. Visibility and Display */
+        .hidden-text {
+            visibility: hidden; /* Exists but not visible */
+        }
+        .none-text {
+            display: none; /* Completely removed */
+        }
+        .block {
+            display: block;
+            background-color: lightblue;
+            padding: 10px;
+            margin: 10px 0;
+        }
+        .inline {
+            display: inline;
+            background-color: yellow;
+            padding: 5px;
+        }
+        .list-item {
+            display: list-item;
+            list-style: square;
+            margin-left: 20px;
+        }
+
+        /* 3. Smooth Scroll */
+        html {
+            scroll-behavior: smooth;
+        }
+        .scroll-links {
+            display: block;
+            margin: 10px 0;
+            padding: 10px;
+            background: lightcoral;
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 5px;
+            width: 200px;
+        }
+
+        /* 4. Padding vs Margin */
+        .padding-margin-example {
+            background-color: lightgreen;
+            padding: 20px;
+            margin: 20px 0;
+            border: 2px solid black;
+        }
+
+        /* 5. Multiple Background Images */
+        .bg-multiple {
+            width: 100%;
+            height: 300px;
+            background: url('\CSS Page Adjustments\img\4k-avengers-gx5riyd6eqklm4hf.jpg') left top no-repeat,
+                        url('\CSS Page Adjustments\img\login.jpg') right bottom no-repeat;
+            background-size: 100px 100px, 150px 150px;
+            border: 2px solid blue;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>CSS Page Adjustments</h1>
+
+        <!-- 1. Table with Black Border and Hover Effect -->
+        <h2>Table with Border & Hover Effect</h2>
+        <table>
+            <tr>
+                <th>Name</th>
+                <th>Age</th>
+            </tr>
+            <tr>
+                <td>Surya Sai</td>
+                <td>25</td>
+            </tr>
+            <tr>
+                <td>Alice</td>
+                <td>30</td>
+            </tr>
+        </table>
+
+        <!-- 2. Visibility and Display Properties -->
+        <h2>Visibility and Display Examples</h2>
+        <p class="hidden-text">This text is hidden using visibility: hidden.</p>
+        <p class="none-text">This text is removed using display: none.</p>
+        <div class="block">This is a block-level element.</div>
+        <span class="inline">This is an inline element.</span>
+        <div class="list-item">This is a list-item element.</div>
+
+        <!-- 3. Smooth Scroll to Top and Bottom -->
+        <h2 id="top">Smooth Scrolling Links</h2>
+        <a href="#bottom" class="scroll-links">Go to Bottom</a>
+        <p style="height: 500px;">(Scroll down to test smooth scrolling.)</p>
+        <h2 id="bottom">Bottom of Page</h2>
+        <a href="#top" class="scroll-links">Go to Top</a>
+
+        <!-- 4. Padding vs Margin -->
+        <h2>Padding vs Margin Example</h2>
+        <div class="padding-margin-example">
+            This div has padding (inside space) and margin (outside space).
+        </div>
+
+        <!-- 5. Multiple Background Images -->
+        <h2>Multiple Background Images</h2>
+        <div class="bg-multiple"></div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Events</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f4f4f4;
+        }
+        .container {
+            width: 80%;
+            max-width: 600px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        button {
+            padding: 10px;
+            margin: 10px 0;
+            font-size: 16px;
+            background: green;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background: darkgreen;
+        }
+        input {
+            padding: 8px;
+            width: 100%;
+            margin: 5px 0;
+            font-size: 16px;
+        }
+        .error {
+            color: red;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>JavaScript Events</h1>
+
+        <!-- 1. Event Listener for Date & Time -->
+        <h2>Click to Get Current Date & Time</h2>
+        <button id="dateTimeBtn">Show Date & Time</button>
+        <p id="dateTimeOutput"></p>
+
+        <!-- 2. JavaScript Validation -->
+        <h2>Form Validation</h2>
+        <input type="text" id="nameInput" placeholder="Enter your name">
+        <button onclick="validateForm()">Submit</button>
+        <p class="error" id="errorMsg"></p>
+
+        <!-- 3. Console.log Debugging -->
+        <h2>Check Console for Debugging</h2>
+        <button onclick="debugExample()">Click to Debug</button>
+
+        <!-- 4. Cookies (Set, Get, Check) -->
+        <h2>Cookie Management</h2>
+        <button onclick="setCookie('username', 'jhon', 1)">Set Cookie</button>
+        <button onclick="getCookie()">Get Cookie</button>
+        <button onclick="checkCookie()">Check Cookie</button>
+        <p id="cookieOutput"></p>
+
+        <!-- 5. JSON Object Access -->
+        <h2>Access JSON Data</h2>
+        <button onclick="showJSON()">Show JSON Data</button>
+        <p id="jsonOutput"></p>
+    </div>
+
+    <script>
+        // 1. Event Listener for Date & Time
+        document.getElementById("dateTimeBtn").addEventListener("click", function() {
+            document.getElementById("dateTimeOutput").innerText = "Current Date & Time: " + new Date();
+        });
+
+        // 2. JavaScript Form Validation
+        function validateForm() {
+            let name = document.getElementById("nameInput").value;
+            if (name === "") {
+                document.getElementById("errorMsg").innerText = "Name field cannot be empty!";
+            } else {
+                document.getElementById("errorMsg").innerText = "Submitted successfully!";
+            }
+        }
+
+        // 3. Debugging Using console.log()
+        function debugExample() {
+            let number = 10;
+            console.log("Debugging Example: Number is", number);
+            console.log("Performing Calculation: number * 2 =", number * 2);
+            console.log("Final Result:", number * 2);
+            alert("Check the console (F12) for debugging output!");
+        }
+
+        // 4. Cookies: Set, Get, Check
+        function setCookie(name, value, days) {
+            let date = new Date();
+            date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+            document.cookie = name + "=" + value + ";expires=" + date.toUTCString() + ";path=/";
+            document.getElementById("cookieOutput").innerText = "Cookie Set: " + name + "=" + value;
+        }
+
+        function getCookie() {
+            let cookies = document.cookie.split(";");
+            let output = "Cookies: ";
+            cookies.forEach(cookie => output += cookie.trim() + " | ");
+            document.getElementById("cookieOutput").innerText = output;
+        }
+
+        function checkCookie() {
+            if (document.cookie.includes("username")) {
+                document.getElementById("cookieOutput").innerText = "Cookie Exists!";
+            } else {
+                document.getElementById("cookieOutput").innerText = "No Cookie Found!";
+            }
+        }
+
+        // 5. JSON Object & Dot Notation Access
+        function showJSON() {
+            let person = { name: "jhon", age: 25, profession: "Developer" };
+            document.getElementById("jsonOutput").innerText = 
+                "Name: " + person.name + ", Age: " + person.age + ", Profession: " + person.profession;
+        }
+    </script>
+
+</body>
+</html>

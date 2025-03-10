@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Basics</title>
+    <script>
+        "use strict"; // Enforcing strict mode
+
+        // 1. Single-line and Multi-line Comments
+        // This is a single-line comment
+
+        /*
+            This is a multi-line comment.
+            It spans multiple lines.
+        */
+
+        // 2. Array of Fruits and Sorting in Descending Order
+        let fruits = ["Apple", "Mango", "Banana", "Orange", "Grapes"];
+        function sortFruits() {
+            fruits.sort().reverse();
+            document.getElementById("fruitList").innerHTML = fruits.join(", ");
+        }
+
+        // 3. Program with FOR/IN Loop
+        let car = { brand: "Tesla", model: "Model X", year: 2023 };
+        function displayCarProperties() {
+            let text = "";
+            for (let key in car) {
+                text += key + ": " + car[key] + "<br>";
+            }
+            document.getElementById("carProperties").innerHTML = text;
+        }
+
+        // 4. Object "person" with Properties and Displaying in 2 Ways
+        let person = { firstName: "John", lastName: "Doe" };
+        function displayPerson() {
+            document.getElementById("personOutput").innerHTML = 
+                "Using dot notation: " + person.firstName + " " + person.lastName + "<br>" +
+                "Using bracket notation: " + person["firstName"] + " " + person["lastName"];
+        }
+
+        // 5. Variable Hoisting (Initialization before Declaration)
+        function hoistingExample() {
+            console.log(x); 
+            var x = 10;
+            console.log(x); 
+            document.getElementById("hoistingOutput").innerHTML = "Check console for output.";
+        }
+
+        // 6. Strict Mode - Causes an error if a variable is not declared
+        function strictModeError() {
+            "use strict"; 
+            let undeclaredVar = 100; 
+            document.getElementById("strictModeOutput").innerHTML = 
+                "No error! undeclaredVar = " + undeclaredVar;
+        }
+        
+    </script>
+</head>
+<body>
+    <h2>JavaScript Basics</h2>
+
+    <div>
+        <h3>Fruits Sorting</h3>
+        <p id="fruitList">Apple, Mango, Banana, Orange, Grapes</p>
+        <button onclick="sortFruits()">Sort in Descending Order</button>
+    </div>
+
+    <div>
+        <h3>FOR/IN Loop - Car Object</h3>
+        <p id="carProperties"></p>
+        <button onclick="displayCarProperties()">Show Car Properties</button>
+    </div>
+
+    <div>
+        <h3>Person Object</h3>
+        <p id="personOutput"></p>
+        <button onclick="displayPerson()">Display Person Details</button>
+    </div>
+
+    <div>
+        <h3>Variable Hoisting</h3>
+        <p id="hoistingOutput"></p>
+        <button onclick="hoistingExample()">Check Hoisting</button>
+    </div>
+
+    <div>
+        <h3>Strict Mode Error</h3>
+        <p id="strictModeOutput"></p>
+        <button onclick="strictModeError()">Trigger Strict Mode Error</button>
+    </div>
+</body>
+</html>

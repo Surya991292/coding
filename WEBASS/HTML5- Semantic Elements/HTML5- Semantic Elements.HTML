@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML5 Semantic Elements</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            width: 90%;
+            max-width: 900px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        header, nav, section, article, aside, footer {
+            margin-bottom: 20px;
+            padding: 15px;
+            background: #e3e3e3;
+            border-radius: 5px;
+        }
+        nav a {
+            margin-right: 15px;
+            text-decoration: none;
+            color: #007BFF;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: left;
+        }
+        figure {
+            text-align: center;
+        }
+        figcaption {
+            font-style: italic;
+            color: gray;
+        }
+        footer {
+            text-align: center;
+            background: #333;
+            color: white;
+        }
+        /* Fix Image Size */
+        .fixed-image {
+            width: 200px;
+            height: 200px;
+            object-fit: cover; /* Ensures image is cropped properly */
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+
+        <!-- 1. Non-Semantic Elements (div, span) -->
+        <h2>Non-Semantic Elements (div & span)</h2>
+        <div style="background: lightblue; padding: 10px;">This is a div block.</div>
+        <p>This is a paragraph with a <span style="color: red;">span element</span>.</p>
+
+        <!-- 2. Semantic Elements (form, table, article) -->
+        <h2>Form Example</h2>
+        <form>
+            <label>Name:</label>
+            <input type="text" placeholder="Enter your name">
+            <input type="submit" value="Submit">
+        </form>
+
+        <h2>Table Example</h2>
+        <table>
+            <tr>
+                <th>Name</th>
+                <th>Age</th>
+            </tr>
+            <tr>
+                <td>Surya Sai</td>
+                <td>25</td>
+            </tr>
+            <tr>
+                <td>JHON</td>
+                <td>30</td>
+            </tr>
+        </table>
+
+        <h2>Article Example</h2>
+        <article>
+            <h3>HTML5 Semantic Elements</h3>
+            <p>HTML5 introduced semantic elements that define the structure of a webpage more clearly.</p>
+        </article>
+
+        <!-- 3. HTML5 Semantic Elements -->
+        <header>
+            <h1>Website Header</h1>
+        </header>
+
+        <nav>
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">Contact</a>
+        </nav>
+
+        <section>
+            <h2>Main Section</h2>
+            <p>This is the main section of the page.</p>
+        </section>
+
+        <aside>
+            <h3>Sidebar Content</h3>
+            <p>This is an aside element for related content.</p>
+        </aside>
+
+        <figure>
+            <img class="fixed-image" src="\HTML5-Semantic-Elements\img\23.jpg" alt="23">
+            <figcaption>Example of a Figure with Figcaption</figcaption>
+        </figure>
+
+        <article>
+            <h3>Latest News</h3>
+            <p><mark>Breaking News:</mark> HTML5 is now widely supported!</p>
+            <p>Published on: <time datetime="2024-03-10">March 10, 2024</time></p>
+        </article>
+
+        <footer>
+            <p>&copy; 2024 HTML5 Semantic Example. All rights reserved.</p>
+        </footer>
+
+    </div>
+
+</body>
+</html>
